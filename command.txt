@@ -1,0 +1,11 @@
+common command: cd d:/    cd: dir 
+dotnet run - > to run the API project
+dotnet watch -> enable Hot reload 
+
+
+To run the project
+in Terminal:
+
+cd API (this is project folder)
+
+then -> dotnet run
