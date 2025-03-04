@@ -2,6 +2,7 @@ using System;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
@@ -16,18 +17,18 @@ public class UsersController(DataContext context):ControllerBase
     // } // in C# 12.0 version this dependency injection make more simple just inject the DbContext in class
 
     [HttpGet]
-    public ActionResult<IEnumerable<AppUser>> GetUsers()
+    public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
-        var users = context.Users.ToList();
+        var users = await context.Users.ToListAsync();
         // return Ok(users);
         return users;
     }
 
 
     [HttpGet("{id:int}")] // /api/users/3
-    public ActionResult<AppUser> GetUser(int id)
+    public async Task<ActionResult<AppUser>> GetUser(int id)
     {
-        var user = context.Users.Find(id);
+        var user = await context.Users.FindAsync(id);
         if(user==null)
         {
             return NotFound();
