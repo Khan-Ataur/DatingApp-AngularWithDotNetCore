@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\API\\API.csproj": {}
+    "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\api\\API.csproj": {}
   },
   "projects": {
-    "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\API\\API.csproj": {
+    "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\API\\API.csproj",
+        "projectPath": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\Khan Ataur\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\API\\obj\\",
+        "outputPath": "D:\\Project\\GIT_KA\\DatingApp-AngularWithDotNetCore\\DatingApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Khan Ataur\\AppData\\Roaming\\NuGet\\NuGet.Config",
