@@ -1,36 +1,11 @@
-using System.Text;
-using API.Data;
-using API.Interfaces;
-using API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.CodeAnalysis.Options;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
+using API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
-
-builder.Services.AddDbContext<DataContext>(opt =>
-{
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddCors(); // allow angular app to access this api project
-
-builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    var tokenkey = builder.Configuration["TokenKey"] ?? throw new Exception("TokenKey not found.");
-    options.TokenValidationParameters = new TokenValidationParameters{
-        ValidateIssuerSigningKey=true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(tokenkey)),
-        ValidateIssuer= false,
-        ValidateAudience=false
-    };
-});
+builder.Services.AddApplicationServices(builder.Configuration); //[custome extension] this is a customer service static method.
+builder.Services.AddIdentityServices(builder.Configuration);    //[custome extension]  there Jwt Bearer authentication checked
 
 var app = builder.Build();
 
