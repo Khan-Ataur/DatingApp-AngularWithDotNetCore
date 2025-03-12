@@ -255,3 +255,9 @@ D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\obj\Debug\net8.0
 D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\obj\Debug\net8.0\API.pdb
 D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\obj\Debug\net8.0\API.genruntimeconfig.cache
 D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\obj\Debug\net8.0\ref\API.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Project\GIT_KA\DatingApp-AngularWithDotNetCore\DatingApp\API\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
