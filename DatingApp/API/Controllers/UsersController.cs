@@ -1,12 +1,13 @@
 using System;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-public class UsersController(DataContext context):BaseApiController
+public class UsersController(DataContext context) : BaseApiController
 {
     // private readonly DataContext _context;
     // public UsersController(DataContext context)
@@ -14,6 +15,7 @@ public class UsersController(DataContext context):BaseApiController
     //     _context=context;
     // } // in C# 12.0 version this dependency injection make more simple just inject the DbContext in class
 
+    [AllowAnonymous]
     [HttpGet]
     public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
     {
@@ -22,15 +24,15 @@ public class UsersController(DataContext context):BaseApiController
         return users;
     }
 
-
+    [Authorize]
     [HttpGet("{id:int}")] // /api/users/3
     public async Task<ActionResult<AppUser>> GetUser(int id)
     {
         var user = await context.Users.FindAsync(id);
-        if(user==null)
+        if (user == null)
         {
             return NotFound();
-        }      
+        }
         return user;
     }
 
