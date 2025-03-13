@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
-import{FormsModule} from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { AccountService } from '../_services/account.service';
 
 @Component({
   selector: 'app-nav',
-  standalone:true,
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  model: any={};
 
-  login(){
-    console.log(this.model);
+  private accountService = inject(AccountService);
+  loggedIn = false;
+
+  model: any = {};
+  login() {
+    this.accountService.login(this.model).subscribe({
+      next: response => {
+        console.log(response);
+        this.loggedIn=true;
+      },
+      error:error=> console.log(error)
+    })
+
+
+
   }
 }
