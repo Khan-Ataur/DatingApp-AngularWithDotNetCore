@@ -22,15 +22,17 @@
     }
 
     @if (loggedIn) {
-    <div class="dropdown">
+      <div dropdown class="dropdown">
+        
+        <a dropdownToggle class="dropdown-toggle text-light text-decoration-none">Welcome user</a>
+       
+        <div *dropdownMenu class="dropdown-menu">
+          <a class="dropdown-item">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+        </div>
 
-      <a class="dropdown-toggle text-light">Welcome user</a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item">Edit Profile</a>
-        <a class="dropdown-item" (click)="logout()">Logout</a>
       </div>
-
-    </div>
     }
 
     <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex" *ngIf="!loggedIn">
