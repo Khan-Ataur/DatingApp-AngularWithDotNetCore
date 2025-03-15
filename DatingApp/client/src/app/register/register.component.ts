@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,6 +8,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  usersFromHomeComponent= input.required<any>(); 
+  // here getting data from home.component.ts as --> home(parent) is using register(child) components; there is a child parent relationship between two components
   model:any={}
 
   register(){
