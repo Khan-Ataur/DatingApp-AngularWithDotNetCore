@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 export class RegisterComponent {
   usersFromHomeComponent= input.required<any>(); 
   // here getting data from home.component.ts as --> home(parent) is using register(child) components; there is a child parent relationship between two components
+  
+  cancelRegister = output<boolean>(); // now passing Child(register) to parent(Home) value when user press Cancel button
+  
   model:any={}
 
   register(){
@@ -18,7 +21,7 @@ export class RegisterComponent {
 
   cancel()
   {
-    console.log('Cancelled');
+    this.cancelRegister.emit(false);
   }
 
 
