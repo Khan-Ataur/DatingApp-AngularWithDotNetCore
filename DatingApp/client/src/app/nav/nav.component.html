@@ -23,7 +23,9 @@
     @if (accountService.currentUser()) {
     <div dropdown class="dropdown">
 
-      <a dropdownToggle class="dropdown-toggle text-light text-decoration-none">Welcome user</a>
+      <a dropdownToggle class="dropdown-toggle text-light text-decoration-none">
+        Welcome {{accountService.currentUser()?.username | titlecase}}
+      </a>
 
       <div *dropdownMenu class="dropdown-menu">
         <a class="dropdown-item">Edit Profile</a>
@@ -50,7 +52,7 @@
       <input name="password" [(ngModel)]="model.password" class="form-control me-2" type="password"
         placeholder="Password">
 
-      <button class="btn btn-outline-success" type="submit">Login</button>
+      <button class="btn btn-success" type="submit">Login</button>
     </form>
     }
 
