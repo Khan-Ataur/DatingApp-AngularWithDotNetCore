@@ -20,7 +20,9 @@ namespace API.Controllers
                         return BadRequest("Username is already exists.");
                   }
 
-                  using var hmac = new HMACSHA512();
+                  return Ok();
+
+                 /* using var hmac = new HMACSHA512();
                   var user = new AppUser
                   {
                         UserName = registerDto.Username.ToLower(),
@@ -33,7 +35,7 @@ namespace API.Controllers
                   return new UserDto{
                         Username = user.UserName,
                         Token = tokenService.CreateToken(user)
-                  };
+                  }; */
             }
 
             [HttpPost("login")]
