@@ -21,7 +21,12 @@ public static class ApplicationServiceExtensions
 
         services.AddCors(); // this allow angular app to access this api project
 
+
+
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<IUserRepository,UserRepository>(); // AddScoped:: A single instance is created per request and shared across that request.
+
+
 
         return services;
 
